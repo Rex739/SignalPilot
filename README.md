@@ -1,6 +1,6 @@
 # SignalPilot
 
-SignalPilot transforms a CoinMarketCap-powered signal layer into explainable, backtestable BNB Chain strategy specs.
+SignalPilot is a strategy intelligence platform that transforms live CoinMarketCap market signals into explainable, backtestable strategy specifications for BNB Chain research workflows.
 
 ## Problem
 
@@ -10,7 +10,7 @@ For professional strategy teams, this creates a gap: market intelligence may be 
 
 ## Solution
 
-SignalPilot is an explainable strategy intelligence layer for BNB Chain research workflows.
+SignalPilot helps researchers, traders, analysts, and builders convert market intelligence into structured strategy specifications.
 
 It takes CoinMarketCap-powered market data, derived indicators, and market regime context, then generates a backtestable strategy spec with:
 
@@ -32,7 +32,7 @@ SignalPilot is positioned as a Strategy Intelligence Platform because it focuses
 
 It does not attempt to be a live trading system. The platform is intentionally scoped to helping users create and review strategy specs that could later plug into real CMC data, wallet identity flows, and a BNB Chain proof registry.
 
-## Features
+## Core Platform Capabilities
 
 - CoinMarketCap-powered signal dashboard for `BNB/USDT`, `CAKE/USDT`, `BTC/USDT`, and `ETH/USDT`
 - Market Intelligence Skill package in `skills/signalpilot-skill`
@@ -93,7 +93,6 @@ signalpilot/
 │   ├── spec/
 │   ├── proof/
 │   ├── skill/
-│   ├── settings/
 │   └── api/
 ├── components/
 │   ├── landing/
@@ -128,7 +127,7 @@ signalpilot/
 7. Go to `/backtest` to review mock strategy performance
 8. Go to `/proof` to view the mock BNB Chain proof registry placeholder
 9. Go to `/skill` to inspect the SignalPilot Market Intelligence Skill package
-10. Go to `/settings` to review data/source configuration
+
 
 ## Run Locally
 
@@ -236,6 +235,6 @@ The data layer is structured as an MCP-ready market data adapter so a future Coi
 
 ## Disclaimer
 
-SignalPilot does not execute live trades.
+SignalPilot is a research and strategy intelligence platform.
 
-It does not route orders, custody assets, submit transactions, or run autonomous trading. It generates strategy specs for research, backtesting, and review.
+The application does not execute trades, custody assets, manage funds, or provide investment advice. Generated outputs are intended for research, evaluation, and strategy-development workflows only.
