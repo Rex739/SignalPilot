@@ -8,7 +8,7 @@ export function LandingFooter() {
         <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-[1.6fr_1fr_1fr_1fr] md:gap-12">
           {/* Brand */}
           <div>
-            <div className="relative h-11 w-[160px] sm:h-12 sm:w-[180px]">
+            <div className="relative h-20 w-[160px] sm:w-[180px]">
               <Image
                 src="https://res.cloudinary.com/dcxghlgre/image/upload/v1781680857/signalPilot/full_logo.png"
                 alt="SignalPilot logo"

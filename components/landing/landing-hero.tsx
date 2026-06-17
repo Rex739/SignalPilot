@@ -16,7 +16,7 @@ export function LandingHero() {
       </div>
 
       <div className="relative mx-auto flex max-w-[1180px] items-center justify-between px-6 py-4 sm:px-8 md:py-5">
-        <Link href="/" aria-label="SignalPilot home" className="relative h-14 w-[150px] sm:h-16 sm:w-[170px] md:h-20 md:w-[180px]">
+        <Link href="/" aria-label="SignalPilot home" className="relative h-20 w-[150px] sm:h-16 sm:w-[170px] md:h-20 md:w-[180px]">
           <Image
             src="https://res.cloudinary.com/dcxghlgre/image/upload/v1781680857/signalPilot/full_logo.png"
             alt="SignalPilot logo"
