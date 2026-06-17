@@ -22,20 +22,20 @@ const sections = [
 
 export function LandingProductSections() {
   return (
-    <section className="px-5">
-      <div className="mx-auto max-w-[1180px] py-20">
-        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
+    <section className="px-6 sm:px-8">
+      <div className="mx-auto max-w-[1180px] py-14 md:py-20">
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
           {/* Left Content */}
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-yellow-300">
               Strategy Intelligence Platform
             </p>
 
-            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight text-slate-100 md:text-5xl">
+            <h2 className="mt-4 max-w-xl font-serif text-3xl font-semibold leading-tight text-slate-100 [text-wrap:balance] sm:text-4xl md:text-5xl">
               One Workflow. Fully Explainable.
             </h2>
 
-            <p className="mt-6 max-w-md text-lg leading-8 text-slate-400">
+            <p className="mt-5 max-w-md text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
               SignalPilot transforms live market intelligence into transparent,
               backtestable strategy specifications. From signal discovery to
               verification, every decision remains visible, inspectable, and
@@ -51,21 +51,21 @@ export function LandingProductSections() {
             </Link>
 
             {/* Stats */}
-            <div className="mt-10 grid grid-cols-3 gap-5 border-t border-slate-800 pt-6">
+            <div className="mt-9 grid grid-cols-1 gap-4 border-t border-slate-800 pt-6 sm:grid-cols-3 sm:gap-5">
               <div>
-                <p className="text-2xl font-semibold text-slate-100">Live</p>
+                <p className="text-xl font-semibold text-slate-100 sm:text-2xl">Live</p>
                 <p className="mt-1 text-xs text-slate-500">Market Signals</p>
               </div>
 
               <div>
-                <p className="text-2xl font-semibold text-slate-100">
+                <p className="text-xl font-semibold text-slate-100 sm:text-2xl">
                   Explainable
                 </p>
                 <p className="mt-1 text-xs text-slate-500">Strategy Logic</p>
               </div>
 
               <div>
-                <p className="text-2xl font-semibold text-slate-100">
+                <p className="text-xl font-semibold text-slate-100 sm:text-2xl">
                   Reproducible
                 </p>
                 <p className="mt-1 text-xs text-slate-500">Strategy Specs</p>
@@ -78,7 +78,7 @@ export function LandingProductSections() {
             {sections.map((section) => (
               <div
                 key={section.title}
-                className="group rounded-2xl border border-slate-800 bg-slate-950/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-yellow-400/30 hover:bg-slate-900/60"
+                className="group rounded-2xl border border-slate-800 bg-slate-950/50 p-5 backdrop-blur-sm transition-all duration-300 hover:border-yellow-400/30 hover:bg-slate-900/60 sm:p-6"
               >
                 <h3 className="text-lg font-semibold text-slate-100">
                   {section.title}

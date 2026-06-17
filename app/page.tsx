@@ -12,7 +12,7 @@ export default async function Home() {
   const marketData = await getMarketData();
 
   return (
-    <div className="relative left-1/2 w-screen -translate-x-1/2 space-y-28 md:space-y-36">
+    <div className="w-full overflow-hidden space-y-20 md:space-y-32">
       <LandingHero />
       <LandingProductSections />
       <LandingWorkflow />

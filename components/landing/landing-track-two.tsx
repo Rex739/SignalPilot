@@ -30,14 +30,14 @@ const fitItems = [
 
 export function LandingTrackTwo() {
   return (
-    <section className="px-5">
-      <div className="mx-auto max-w-[1180px] border-y border-slate-800 py-16 md:py-20">
+    <section className="px-6 sm:px-8">
+      <div className="mx-auto max-w-[1180px] border-y border-slate-800 py-14 md:py-20">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300">
               Strategy Intelligence Platform
             </p>
-            <h2 className="mt-4 font-serif text-4xl font-semibold leading-tight text-slate-100 md:text-5xl">
+            <h2 className="mt-4 max-w-xl font-serif text-3xl font-semibold leading-tight text-slate-100 [text-wrap:balance] sm:text-4xl md:text-5xl">
               Why SignalPilot fits professional strategy teams
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-slate-400">

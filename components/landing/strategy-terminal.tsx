@@ -6,13 +6,13 @@ const backtest = generateBacktest(defaultStrategy);
 export function StrategyTerminal() {
   return (
     <div className="relative w-full overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/95 shadow-2xl shadow-black/40">
-      <div className="flex items-center justify-between border-b border-slate-800 bg-slate-950/80 px-4 py-3">
+      <div className="flex items-center justify-between gap-3 border-b border-slate-800 bg-slate-950/80 px-4 py-3">
         <div className="flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-red-400" />
           <span className="h-2.5 w-2.5 rounded-full bg-yellow-300" />
           <span className="h-2.5 w-2.5 rounded-full bg-teal-300" />
         </div>
-        <p className="font-mono text-xs text-slate-500">signalpilot/spec.json</p>
+        <p className="truncate font-mono text-xs text-slate-500">signalpilot/spec.json</p>
       </div>
 
       <div className="grid gap-4 p-4 lg:grid-cols-[0.78fr_1.22fr]">
@@ -35,10 +35,10 @@ export function StrategyTerminal() {
       </div>
 
       <div className="border-t border-slate-800 bg-slate-950/80 p-4">
-        <div className="grid gap-2 font-mono text-xs text-slate-400 md:grid-cols-3">
-          <span className="rounded-md bg-slate-900 px-2 py-1">risk.max_trade: 1.6%</span>
-          <span className="rounded-md bg-slate-900 px-2 py-1">regime: {defaultStrategy.marketRegime}</span>
-          <span className="rounded-md bg-slate-900 px-2 py-1">proof: pending</span>
+        <div className="grid min-w-0 gap-2 font-mono text-xs text-slate-400 md:grid-cols-3">
+          <span className="min-w-0 rounded-md bg-slate-900 px-2 py-1 break-words">risk.max_trade: 1.6%</span>
+          <span className="min-w-0 rounded-md bg-slate-900 px-2 py-1 break-words">regime: {defaultStrategy.marketRegime}</span>
+          <span className="min-w-0 rounded-md bg-slate-900 px-2 py-1 break-words">proof: pending</span>
         </div>
       </div>
     </div>
