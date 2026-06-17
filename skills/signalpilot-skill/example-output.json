@@ -1,0 +1,97 @@
+{
+  "strategyName": "BNB Momentum Breakout 1D",
+  "marketRegime": "Expansion",
+  "entryRules": [
+    "Enter only after a 1D candle closes above 624 with volume expansion returning above 10%.",
+    "Confirm RSI remains between 55 and 72 to avoid late overextension.",
+    "Require MACD to remain bullish or neutral-to-bullish on the confirmation candle."
+  ],
+  "exitRules": [
+    "Take partial profit near 641 or when reward-to-risk reaches 1.8R.",
+    "Exit the remaining research position near 662 if momentum remains constructive.",
+    "Exit fully if price closes back below the active EMA trend filter."
+  ],
+  "riskRules": [
+    "SignalPilot does not execute live trades; this is a research and backtesting specification only.",
+    "Risk no more than 1.6% of account equity on the idea.",
+    "Do not open new exposure during major event risk or if live CMC data falls back to stale snapshots."
+  ],
+  "positionSizing": "Balanced risk: 1.6% maximum account risk per idea, capped at 8% notional exposure.",
+  "stopLoss": "Initial stop below 588 support or 1.2 ATR from entry, whichever is tighter.",
+  "takeProfit": "Primary target 641; secondary target 662 if volume and RSI confirmation remain intact.",
+  "invalidationConditions": [
+    "Daily close below 588 support.",
+    "RSI falls below 48 while MACD flips bearish.",
+    "Funding spikes aggressively positive while price fails to reclaim resistance, suggesting crowded positioning."
+  ],
+  "backtestParameters": {
+    "lookbackWindow": "180D",
+    "timeframe": "1D",
+    "feesBps": 10,
+    "slippageBps": 5,
+    "startingEquity": 10000
+  },
+  "backtestMetrics": {
+    "totalReturn": 24.5,
+    "sharpeRatio": 1.97,
+    "maxDrawdown": -9.6,
+    "winRate": 72.4,
+    "profitFactor": 2.14,
+    "totalTrades": 38
+  },
+  "reasoning": "BNB/USDT is classified as an expansion regime because price remains above the 20/50 EMA structure while RSI, MACD, sentiment, and narrative momentum are constructive. The negative 24h volume change reduces urgency, so the strategy waits for a confirmed close above resistance rather than assuming immediate continuation. Optional derivatives context supports cautious momentum because open interest is rising but funding is only mildly positive.",
+  "jsonStrategySpec": {
+    "id": "sp-bnb-momentum-breakout-1d",
+    "market": "BNB/USDT",
+    "timeframe": "1D",
+    "riskLevel": "Balanced",
+    "source": "hybrid-cmc-simulated",
+    "strategyType": "Momentum Breakout",
+    "marketRegime": "Expansion",
+    "rules": {
+      "entry": [
+        "Enter only after a 1D candle closes above 624 with volume expansion returning above 10%.",
+        "Confirm RSI remains between 55 and 72 to avoid late overextension.",
+        "Require MACD to remain bullish or neutral-to-bullish on the confirmation candle."
+      ],
+      "exit": [
+        "Take partial profit near 641 or when reward-to-risk reaches 1.8R.",
+        "Exit the remaining research position near 662 if momentum remains constructive.",
+        "Exit fully if price closes back below the active EMA trend filter."
+      ],
+      "risk": [
+        "SignalPilot does not execute live trades; this is a research and backtesting specification only.",
+        "Risk no more than 1.6% of account equity on the idea.",
+        "Do not open new exposure during major event risk or if live CMC data falls back to stale snapshots."
+      ],
+      "invalidation": [
+        "Daily close below 588 support.",
+        "RSI falls below 48 while MACD flips bearish.",
+        "Funding spikes aggressively positive while price fails to reclaim resistance, suggesting crowded positioning."
+      ]
+    },
+    "riskModel": {
+      "positionSizing": "Balanced risk: 1.6% maximum account risk per idea, capped at 8% notional exposure.",
+      "stopLoss": "Initial stop below 588 support or 1.2 ATR from entry, whichever is tighter.",
+      "takeProfit": "Primary target 641; secondary target 662 if volume and RSI confirmation remain intact."
+    },
+    "backtest": {
+      "parameters": {
+        "lookbackWindow": "180D",
+        "timeframe": "1D",
+        "feesBps": 10,
+        "slippageBps": 5,
+        "startingEquity": 10000
+      },
+      "metrics": {
+        "totalReturn": 24.5,
+        "sharpeRatio": 1.97,
+        "maxDrawdown": -9.6,
+        "winRate": 72.4,
+        "profitFactor": 2.14,
+        "totalTrades": 38
+      }
+    },
+    "reasoning": "BNB/USDT is classified as an expansion regime because price remains above the 20/50 EMA structure while RSI, MACD, sentiment, and narrative momentum are constructive. The negative 24h volume change reduces urgency, so the strategy waits for a confirmed close above resistance rather than assuming immediate continuation. Optional derivatives context supports cautious momentum because open interest is rising but funding is only mildly positive."
+  }
+}

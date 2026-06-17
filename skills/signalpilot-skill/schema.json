@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SignalPilot Market Intelligence Skill Contract",
+  "description": "Validates either a SignalPilot Market Intelligence Skill input request or output response.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/skillInput"
+    },
+    {
+      "$ref": "#/$defs/skillOutput"
+    }
+  ],
+  "$defs": {
+    "skillInput": {
+      "type": "object",
+      "required": ["marketSymbol", "timeframe", "riskLevel", "cmcSignalSnapshot", "indicators"],
+      "properties": {
+        "marketSymbol": {
+          "type": "string",
+          "description": "Market pair or symbol, for example BNB/USDT."
+        },
+        "timeframe": {
+          "type": "string",
+          "enum": ["4H", "1D", "1W"]
+        },
+        "riskLevel": {
+          "type": "string",
+          "enum": ["Conservative", "Balanced", "Aggressive"]
+        },
+        "cmcSignalSnapshot": {
+          "type": "object",
+          "required": ["source", "timestamp", "price", "priceChange24h", "volume24h", "volumeChange24h"],
+          "properties": {
+            "source": {
+              "type": "string",
+              "enum": ["live-cmc", "hybrid-cmc-simulated", "mock-fallback"]
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "price": {
+              "type": "number"
+            },
+            "priceChange24h": {
+              "type": "number"
+            },
+            "volume24h": {
+              "type": "number"
+            },
+            "volumeChange24h": {
+              "type": "number"
+            },
+            "marketCap": {
+              "type": "number"
+            },
+            "lastUpdated": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": false
+        },
+        "indicators": {
+          "type": "object",
+          "required": ["rsi", "macd", "emaTrend", "volumeChange", "volatility", "marketRegime"],
+          "properties": {
+            "rsi": {
+              "type": "number"
+            },
+            "macd": {
+              "type": "string"
+            },
+            "emaTrend": {
+              "type": "string"
+            },
+            "volumeChange": {
+              "type": "number"
+            },
+            "volatility": {
+              "type": "number"
+            },
+            "sentiment": {
+              "type": "number"
+            },
+            "fearGreed": {
+              "type": "number"
+            },
+            "narrativeMomentum": {
+              "type": "number"
+            },
+            "support": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "resistance": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "marketRegime": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "derivatives": {
+          "type": "object",
+          "properties": {
+            "positioning": {
+              "type": "string"
+            },
+            "fundingRate": {
+              "type": "number"
+            },
+            "openInterest": {
+              "type": "number"
+            },
+            "openInterestChange24h": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "skillOutput": {
+      "type": "object",
+      "required": [
+        "strategyName",
+        "marketRegime",
+        "entryRules",
+        "exitRules",
+        "riskRules",
+        "positionSizing",
+        "stopLoss",
+        "takeProfit",
+        "invalidationConditions",
+        "backtestParameters",
+        "backtestMetrics",
+        "reasoning",
+        "jsonStrategySpec"
+      ],
+      "properties": {
+        "strategyName": {
+          "type": "string"
+        },
+        "marketRegime": {
+          "type": "string"
+        },
+        "entryRules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exitRules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "riskRules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "positionSizing": {
+          "type": "string"
+        },
+        "stopLoss": {
+          "type": "string"
+        },
+        "takeProfit": {
+          "type": "string"
+        },
+        "invalidationConditions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "backtestParameters": {
+          "type": "object",
+          "required": ["lookbackWindow", "timeframe", "feesBps", "slippageBps", "startingEquity"],
+          "properties": {
+            "lookbackWindow": {
+              "type": "string"
+            },
+            "timeframe": {
+              "type": "string"
+            },
+            "feesBps": {
+              "type": "number"
+            },
+            "slippageBps": {
+              "type": "number"
+            },
+            "startingEquity": {
+              "type": "number"
+            }
+          },
+          "additionalProperties": false
+        },
+        "backtestMetrics": {
+          "type": "object",
+          "required": ["totalReturn", "sharpeRatio", "maxDrawdown", "winRate", "profitFactor", "totalTrades"],
+          "properties": {
+            "totalReturn": {
+              "type": "number"
+            },
+            "sharpeRatio": {
+              "type": "number"
+            },
+            "maxDrawdown": {
+              "type": "number"
+            },
+            "winRate": {
+              "type": "number"
+            },
+            "profitFactor": {
+              "type": "number"
+            },
+            "totalTrades": {
+              "type": "integer"
+            }
+          },
+          "additionalProperties": false
+        },
+        "reasoning": {
+          "type": "string"
+        },
+        "jsonStrategySpec": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
