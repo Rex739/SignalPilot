@@ -42,6 +42,7 @@ export function LandingMarketStrip({
 
         <MotionReveal delay={0.12} className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-950">
           <div className="border-b border-slate-800 px-4 py-3 font-mono text-xs text-yellow-300">
+            {/* Keep the source explicit: derived indicators can remain available even when quotes fall back. */}
             CMC_SIGNAL_FEED / {status.fallbackActive ? "MOCK FALLBACK" : status.mode === "mock" ? "MOCK" : "LIVE CMC DATA"}
           </div>
           <div className="divide-y divide-slate-800">

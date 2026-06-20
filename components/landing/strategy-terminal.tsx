@@ -1,6 +1,7 @@
 import { defaultStrategy, generateBacktest } from "@/lib/market-data";
 import { formatPercent } from "@/lib/utils";
 
+// This preview is intentionally deterministic and computed once per server module load.
 const backtest = generateBacktest(defaultStrategy);
 
 export function StrategyTerminal() {

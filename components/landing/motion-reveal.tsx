@@ -6,6 +6,7 @@ export function MotionReveal({
   delay = 0,
   ...props
 }: HTMLMotionProps<"div"> & { delay?: number }) {
+  // Reveal each section once; replaying on every scroll pass distracts from data review.
   return (
     <motion.div
       initial={{ opacity: 0, y: 22 }}

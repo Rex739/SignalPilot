@@ -9,6 +9,8 @@ import { getMarketData } from "@/lib/data-mode";
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
+  // Resolve the configured live, hybrid, or fallback feed on the server so API
+  // credentials and provider failures never leak into the landing-page client.
   const marketData = await getMarketData();
 
   return (

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui";
 export function LandingHero() {
   return (
     <section className="relative min-h-[720px] overflow-hidden border-b border-slate-800 bg-[#090a0c] text-white md:min-h-[860px]">
+      {/* CSS-only signal field keeps the hero sharp at every viewport without loading a decorative asset. */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_18%,rgba(56,189,248,0.2),transparent_31rem)]" />
       <div className="absolute inset-x-0 top-0 h-[620px] opacity-75">
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,10,12,0.04),#090a0c_92%)]" />
